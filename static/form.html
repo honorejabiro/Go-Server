@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Financial Learning Help | MoneyWise Path</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17211b;
+      background: #f7f8f4;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #dfe6dc;
+    }
+
+    nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #164734;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #31453a;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: #0e7c55;
+    }
+
+    .page-intro {
+      background:
+        linear-gradient(rgba(15, 44, 32, 0.78), rgba(15, 44, 32, 0.78)),
+        url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1800&q=80");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+      padding: 78px 24px;
+    }
+
+    .intro-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      line-height: 1.06;
+      margin: 0 0 16px;
+      letter-spacing: 0;
+      max-width: 760px;
+    }
+
+    .page-intro p {
+      max-width: 680px;
+      margin: 0;
+      color: #edf7ef;
+      font-size: 1.12rem;
+    }
+
+    main {
+      padding: 54px 24px;
+    }
+
+    .layout {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .info-panel,
+    form {
+      background: #ffffff;
+      border: 1px solid #dfe6dc;
+      border-radius: 8px;
+      box-shadow: 0 12px 30px rgba(30, 51, 39, 0.08);
+    }
+
+    .info-panel {
+      padding: 26px;
+    }
+
+    .info-panel h2,
+    form h2 {
+      color: #164734;
+      margin: 0 0 12px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .info-panel p {
+      color: #526257;
+      margin: 0 0 18px;
+    }
+
+    .info-panel ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #3e5147;
+    }
+
+    .info-panel li {
+      margin-bottom: 10px;
+    }
+
+    form {
+      padding: 30px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 800;
+      color: #263b30;
+      font-size: 0.95rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #cbd7cf;
+      border-radius: 6px;
+      padding: 12px 13px;
+      font: inherit;
+      color: #17211b;
+      background: #fbfcfa;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 3px solid rgba(14, 124, 85, 0.18);
+      border-color: #0e7c55;
+      background: #ffffff;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .radio-group,
+    .checkbox-group {
+      display: grid;
+      gap: 10px;
+      padding: 12px;
+      background: #f7f8f4;
+      border-radius: 6px;
+      border: 1px solid #dfe6dc;
+    }
+
+    .choice {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #3e5147;
+      font-weight: 700;
+    }
+
+    .choice input {
+      width: auto;
+      margin-top: 6px;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    button,
+    .secondary {
+      border-radius: 6px;
+      padding: 12px 18px;
+      font-weight: 800;
+      font: inherit;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    button {
+      background: #0e7c55;
+      border: 1px solid #0e7c55;
+      color: #ffffff;
+    }
+
+    button:hover {
+      background: #0a6847;
+    }
+
+    .secondary {
+      background: #ffffff;
+      border: 1px solid #cbd7cf;
+      color: #31453a;
+    }
+
+    .note {
+      margin-top: 18px;
+      color: #66736a;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #dfe6dc;
+      color: #526257;
+      padding: 24px;
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      nav,
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">MoneyWise Path</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="form.html">Request Help</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="page-intro">
+    <div class="intro-inner">
+      <h1>Tell us what kind of money guidance you need.</h1>
+      <p>Fill out the form below so we can understand your goals, experience level, and whether you want help with saving, ETFs, stocks, budgeting, or a full beginner plan.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="layout">
+      <aside class="info-panel">
+        <h2>What happens next?</h2>
+        <p>Your answers help shape a better learning path for your needs.</p>
+        <ul>
+          <li>Choose the service that fits your current goal.</li>
+          <li>Share your comfort level with saving and investing.</li>
+          <li>Add any questions you already have about ETFs, stocks, or budgeting.</li>
+        </ul>
+      </aside>
+
+      <form action="/form" method="post">
+        <h2>Service Request Form</h2>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="first-name">First Name</label>
+            <input id="first-name" name="first-name" type="text" autocomplete="given-name" required>
+          </div>
+
+          <div class="field">
+            <label for="last-name">Last Name</label>
+            <input id="last-name" name="last-name" type="text" autocomplete="family-name" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 123-4567" required>
+          </div>
+
+          <div class="field full">
+            <label for="street">Street Address</label>
+            <input id="street" name="street" type="text" autocomplete="street-address" required>
+          </div>
+
+          <div class="field">
+            <label for="city">City</label>
+            <input id="city" name="city" type="text" autocomplete="address-level2" required>
+          </div>
+
+          <div class="field">
+            <label for="state">State</label>
+            <input id="state" name="state" type="text" autocomplete="address-level1" required>
+          </div>
+
+          <div class="field">
+            <label for="zip">ZIP Code</label>
+            <input id="zip" name="zip" type="text" autocomplete="postal-code" required>
+          </div>
+
+          <div class="field">
+            <label for="service">Type of Service</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <option value="saving-plan">Saving and Budget Plan</option>
+              <option value="etf-basics">ETF Learning Session</option>
+              <option value="stock-basics">Stock Market Basics</option>
+              <option value="investment-plan">Beginner Investing Plan</option>
+              <option value="debt-and-saving">Debt and Saving Strategy</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label>Current Experience Level</label>
+            <div class="radio-group">
+              <label class="choice"><input type="radio" name="experience" value="beginner" required> Beginner: I am just getting started.</label>
+              <label class="choice"><input type="radio" name="experience" value="some-knowledge"> Some knowledge: I know a little but want structure.</label>
+              <label class="choice"><input type="radio" name="experience" value="active-investor"> Active saver/investor: I want to improve my plan.</label>
+            </div>
+          </div>
+
+          <div class="field full">
+            <label>Topics You Want Help With</label>
+            <div class="checkbox-group">
+              <label class="choice"><input type="checkbox" name="topics" value="budgeting"> Budgeting and spending habits</label>
+              <label class="choice"><input type="checkbox" name="topics" value="emergency-fund"> Emergency fund and saving goals</label>
+              <label class="choice"><input type="checkbox" name="topics" value="etfs"> ETFs and index funds</label>
+              <label class="choice"><input type="checkbox" name="topics" value="stocks"> Stocks and market basics</label>
+              <label class="choice"><input type="checkbox" name="topics" value="retirement"> Retirement accounts and long-term planning</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="contact-method">Preferred Contact Method</label>
+            <select id="contact-method" name="contact-method" required>
+              <option value="">Select one</option>
+              <option value="phone">Phone</option>
+              <option value="email">Email</option>
+              <option value="text">Text Message</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="time">Best Time to Contact</label>
+            <select id="time" name="time" required>
+              <option value="">Select a time</option>
+              <option value="morning">Morning</option>
+              <option value="afternoon">Afternoon</option>
+              <option value="evening">Evening</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="goals">Tell Us About Your Goals</label>
+            <textarea id="goals" name="goals" placeholder="Example: I want to save for emergencies, understand ETFs, and learn how to start investing safely."></textarea>
+          </div>
+        </div>
+
+        <p class="note">This form is for educational support only. It does not create a financial advisory relationship.</p>
+
+        <div class="button-row">
+          <a class="secondary" href="index.html">Back to Home</a>
+          <button type="submit">Submit Request</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>MoneyWise Path provides educational information only and is not financial, legal, or tax advice.</p>
+  </footer>
+</body>
+</html>
